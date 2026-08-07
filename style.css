@@ -1,0 +1,1553 @@
+/* =========================================
+   中国象棋网站
+   Author: ChatGPT
+========================================= */
+
+/* ========= RESET ========= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Noto Sans SC',sans-serif;
+
+    background:#F8F4EC;
+
+    color:#2C2C2C;
+
+    line-height:1.8;
+
+}
+
+/* ========= 图片 ========= */
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+/* ========= 链接 ========= */
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+/* ========= section ========= */
+
+section{
+
+    padding:90px 10%;
+
+}
+
+/* ========= 标题 ========= */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    color:#8B0000;
+
+    font-family:'Ma Shan Zheng',cursive;
+
+    margin-bottom:15px;
+
+}
+
+.section-title p{
+
+    color:#777;
+
+    letter-spacing:2px;
+
+    font-size:17px;
+
+}
+
+/* ========= BUTTON ========= */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    background:#8B0000;
+
+    color:white;
+
+    padding:15px 38px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    transition:.35s;
+
+    border:2px solid #D4AF37;
+
+}
+
+.btn:hover{
+
+    background:#A11212;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(139,0,0,.88);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.logo{
+
+    font-size:34px;
+
+    color:#FFD700;
+
+    font-family:'Ma Shan Zheng',cursive;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    font-size:17px;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+.nav-links a:hover{
+
+    color:#FFD700;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#FFD700;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+        HERO
+=========================== */
+
+.hero{
+
+    height:100vh;
+
+    background:
+
+    linear-gradient(
+
+    rgba(70,0,0,.55),
+
+    rgba(70,0,0,.55)
+
+    ),
+
+    url("images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.hero-overlay{
+
+    color:white;
+
+}
+
+.hero h1{
+
+    font-size:92px;
+
+    font-family:'Ma Shan Zheng',cursive;
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+
+}
+
+.hero h2{
+
+    font-size:36px;
+
+    letter-spacing:5px;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    width:70%;
+
+    margin:auto;
+
+    font-size:21px;
+
+}
+
+.hero .btn{
+
+    margin-top:45px;
+
+}
+
+/* ===========================
+      WHY SECTION
+=========================== */
+
+.why-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.why-image img{
+
+    border-radius:20px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+
+}
+
+.why-text h3{
+
+    font-size:34px;
+
+    color:#8B0000;
+
+    margin-bottom:25px;
+
+}
+
+.why-text p{
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+       FEATURE GRID
+=========================== */
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.feature-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    border-top:5px solid #D4AF37;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 40px rgba(0,0,0,.18);
+
+}
+
+.icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card h4{
+
+    color:#8B0000;
+
+    margin-bottom:12px;
+
+}
+
+/* ===========================
+       QUOTE
+=========================== */
+
+.quote{
+
+    margin-top:50px;
+
+    background:#8B0000;
+
+    color:white;
+
+    padding:35px;
+
+    border-left:8px solid gold;
+
+    border-radius:15px;
+
+}
+
+.quote h3{
+
+    font-weight:400;
+
+    line-height:1.7;
+
+    font-style:italic;
+
+}
+/* =========================================
+   中国象棋网站
+   Author: ChatGPT
+========================================= */
+
+/* ========= RESET ========= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Noto Sans SC',sans-serif;
+
+    background:#F8F4EC;
+
+    color:#2C2C2C;
+
+    line-height:1.8;
+
+}
+
+/* ========= 图片 ========= */
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+/* ========= 链接 ========= */
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+/* ========= section ========= */
+
+section{
+
+    padding:90px 10%;
+
+}
+
+/* ========= 标题 ========= */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+    color:#8B0000;
+
+    font-family:'Ma Shan Zheng',cursive;
+
+    margin-bottom:15px;
+
+}
+
+.section-title p{
+
+    color:#777;
+
+    letter-spacing:2px;
+
+    font-size:17px;
+
+}
+
+/* ========= BUTTON ========= */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    background:#8B0000;
+
+    color:white;
+
+    padding:15px 38px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    transition:.35s;
+
+    border:2px solid #D4AF37;
+
+}
+
+.btn:hover{
+
+    background:#A11212;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(139,0,0,.88);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.logo{
+
+    font-size:34px;
+
+    color:#FFD700;
+
+    font-family:'Ma Shan Zheng',cursive;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    font-size:17px;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+.nav-links a:hover{
+
+    color:#FFD700;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#FFD700;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+        HERO
+=========================== */
+
+.hero{
+
+    height:100vh;
+
+    background:
+
+    linear-gradient(
+
+    rgba(70,0,0,.55),
+
+    rgba(70,0,0,.55)
+
+    ),
+
+    url("images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.hero-overlay{
+
+    color:white;
+
+}
+
+.hero h1{
+
+    font-size:92px;
+
+    font-family:'Ma Shan Zheng',cursive;
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+
+}
+
+.hero h2{
+
+    font-size:36px;
+
+    letter-spacing:5px;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    width:70%;
+
+    margin:auto;
+
+    font-size:21px;
+
+}
+
+.hero .btn{
+
+    margin-top:45px;
+
+}
+
+/* ===========================
+      WHY SECTION
+=========================== */
+
+.why-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.why-image img{
+
+    border-radius:20px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+
+}
+
+.why-text h3{
+
+    font-size:34px;
+
+    color:#8B0000;
+
+    margin-bottom:25px;
+
+}
+
+.why-text p{
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+       FEATURE GRID
+=========================== */
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.feature-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    border-top:5px solid #D4AF37;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 40px rgba(0,0,0,.18);
+
+}
+
+.icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card h4{
+
+    color:#8B0000;
+
+    margin-bottom:12px;
+
+}
+
+/* ===========================
+       QUOTE
+=========================== */
+
+.quote{
+
+    margin-top:50px;
+
+    background:#8B0000;
+
+    color:white;
+
+    padding:35px;
+
+    border-left:8px solid gold;
+
+    border-radius:15px;
+
+}
+
+.quote h3{
+
+    font-weight:400;
+
+    line-height:1.7;
+
+    font-style:italic;
+}
+/* =====================================
+        HOW TO PLAY
+===================================== */
+
+.how-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.how-image img{
+
+    border-radius:20px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.how-text{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.how-text h3{
+
+    color:#8B0000;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+.how-text p{
+
+    margin-bottom:18px;
+
+}
+
+/* =====================================
+          GAME FLOW
+===================================== */
+
+.game-flow{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.flow-box{
+
+    background:white;
+
+    width:220px;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border-top:5px solid #D4AF37;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.flow-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.flow-box h3{
+
+    color:#8B0000;
+
+    margin-bottom:10px;
+
+}
+
+.arrow{
+
+    font-size:30px;
+
+    color:#D4AF37;
+
+}
+
+/* =====================================
+            BOARD
+===================================== */
+
+#board{
+
+    background:#FDF9F2;
+
+}
+
+.board-container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.board-container img{
+
+    border-radius:20px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+    margin-bottom:30px;
+
+}
+
+.board-container p{
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+
+/* =====================================
+           PIECES SECTION
+===================================== */
+
+#pieces{
+
+    background:white;
+
+}
+
+.pieces-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.piece-card{
+
+    background:#FFFDF8;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.piece-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:#D4AF37;
+
+}
+
+.piece-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+}
+
+.piece-card img{
+
+    width:120px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.piece-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.piece-card h3{
+
+    color:#8B0000;
+
+    margin-bottom:15px;
+
+    font-size:26px;
+
+}
+
+.piece-card p{
+
+    color:#555;
+
+}
+
+/* =====================================
+        PIECE GLOW EFFECT
+===================================== */
+
+.piece-card:hover{
+
+    border:1px solid #D4AF37;
+
+}
+
+.piece-card:hover::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    box-shadow:0 0 30px rgba(212,175,55,.25);
+
+    pointer-events:none;
+
+}
+/* =========================================
+   HISTORY TIMELINE
+========================================= */
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:4px;
+    height:100%;
+    background:#D4AF37;
+}
+
+.timeline-item{
+    width:50%;
+    padding:20px 40px;
+    position:relative;
+}
+
+.timeline-item:nth-child(odd){
+    left:0;
+    text-align:right;
+}
+
+.timeline-item:nth-child(even){
+    left:50%;
+}
+
+.timeline-icon{
+    width:70px;
+    height:70px;
+    background:#8B0000;
+    color:white;
+    border:4px solid #D4AF37;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    position:absolute;
+    top:25px;
+    right:-35px;
+    z-index:2;
+}
+
+.timeline-item:nth-child(even) .timeline-icon{
+    left:-35px;
+}
+
+.timeline-content{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    transition:.35s;
+}
+
+.timeline-content:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.2);
+}
+
+.timeline-content h3{
+    color:#8B0000;
+    margin-bottom:12px;
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+#about{
+    background:#8B0000;
+    color:white;
+    text-align:center;
+}
+
+.about-content{
+    max-width:850px;
+    margin:auto;
+}
+
+.about-content p{
+    margin:20px 0;
+    font-size:19px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    background:#2C2C2C;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer h2{
+    font-family:'Ma Shan Zheng',cursive;
+    color:#FFD700;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+footer p{
+    margin:10px 0;
+    color:#DDD;
+}
+
+/* =========================================
+   TOP BUTTON
+========================================= */
+
+#topBtn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#8B0000;
+    color:white;
+
+    font-size:22px;
+    cursor:pointer;
+
+    display:none;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+
+#topBtn:hover{
+    background:#D4AF37;
+    color:#8B0000;
+    transform:translateY(-5px);
+}
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+
+.fade-in{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all .8s ease;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media(max-width:992px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:64px;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    .hero p{
+        width:90%;
+        font-size:18px;
+    }
+
+    .why-container,
+    .how-container,
+    .tips-container{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pieces-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .timeline::before{
+        left:30px;
+    }
+
+    .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:90px;
+        padding-right:20px;
+        text-align:left !important;
+    }
+
+    .timeline-icon{
+        left:-5px !important;
+        right:auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    .pieces-grid{
+        grid-template-columns:1fr;
+    }
+
+    .game-flow{
+        flex-direction:column;
+    }
+
+    .arrow{
+        transform:rotate(90deg);
+    }
+
+    .tips-table{
+        font-size:14px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:26px;
+    }
+
+    .nav-links a{
+        font-size:15px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .btn{
+        padding:12px 28px;
+        font-size:16px;
+    }
+
+}
+
+/* =========================================
+   EXTRA DECORATION
+========================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(212,175,55,.08),
+        transparent 40%),
+        radial-gradient(circle at bottom right,
+        rgba(139,0,0,.08),
+        transparent 45%);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+/*=========================
+    XIANGQI BOARD
+=========================*/
+
+.xiangqi-board{
+
+    width:900px;
+
+    margin:auto;
+
+    background:#F4D9A5;
+
+    border:8px solid #8B4513;
+
+    display:grid;
+
+    grid-template-columns:repeat(9,80px);
+
+    grid-auto-rows:80px;
+
+    justify-content:center;
+
+    position:relative;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+/* 格子 */
+
+.xiangqi-board>div{
+
+    border:1px solid #7A4A20;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+}
+
+/* 楚河漢界 */
+
+.river{
+
+    grid-column:1/10;
+
+    background:#F9E7C5;
+
+    font-size:34px;
+
+    font-family:"Ma Shan Zheng";
+
+    letter-spacing:12px;
+
+    color:#8B0000;
+
+    border-top:4px solid #7A4A20;
+
+    border-bottom:4px solid #7A4A20;
+
+}
+
+/* 棋子 */
+
+.piece{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:#F7E7B6;
+
+    border:3px solid #B8860B;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    box-shadow:0 5px 12px rgba(0,0,0,.2);
+
+}
+
+/* 红棋 */
+
+.red{
+
+    color:#B22222;
+
+}
+
+/* 黑棋 */
+
+.black{
+
+    color:#222;
+
+}
+
+/* Hover */
+
+.piece:hover{
+
+    transform:scale(1.15);
+
+    background:#FFF6D5;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+
+}
