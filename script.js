@@ -374,3 +374,46 @@ window.addEventListener("scroll",()=>{
     console.log("浏览进度："+percent+"%");
 
 });
+// =========================================
+// 反馈窗口
+// =========================================
+
+const feedbackLink = document.getElementById("feedback-link");
+const feedbackModal = document.getElementById("feedback-modal");
+const closeFeedback = document.getElementById("close-feedback");
+
+
+// 点击「反馈」
+if (feedbackLink) {
+    feedbackLink.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        feedbackModal.style.display = "flex";
+
+    });
+}
+
+
+// 点击 × 关闭
+if (closeFeedback) {
+    closeFeedback.addEventListener("click", function () {
+
+        feedbackModal.style.display = "none";
+
+    });
+}
+
+
+// 点击黑色背景关闭
+if (feedbackModal) {
+    feedbackModal.addEventListener("click", function (event) {
+
+        if (event.target === feedbackModal) {
+
+            feedbackModal.style.display = "none";
+
+        }
+
+    });
+}
