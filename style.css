@@ -1780,3 +1780,39 @@ body::before{
     }
 
 }
+.video-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 35px;
+    text-align: center;
+
+    background: #fffaf0;
+    border: 1px solid #d4af37;
+    border-radius: 16px;
+}
+
+.video-section h2 {
+    color: #8b0000;
+    margin-bottom: 15px;
+}
+
+.video-section p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.video-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+
+    background: #8b0000;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.video-button:hover {
+    background: #a50000;
+}
